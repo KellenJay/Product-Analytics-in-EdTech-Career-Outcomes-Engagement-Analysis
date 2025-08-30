@@ -1,0 +1,39 @@
+--Exploration of Career Success Dataset:
+-- Explore all fields of study
+SELECT Field_of_Study FROM dbo.career_success
+SELECT DISTINCT Field_of_Study FROM dbo.career_success
+
+-- Explore all current job level
+SELECT Current_Job_Level FROM dbo.career_success
+SELECT DISTINCT Current_Job_Level FROM dbo.career_success
+
+-- Explore all Entrepreneurship
+SELECT Entrepreneurship FROM dbo.career_success
+SELECT DISTINCT Entrepreneurship FROM dbo.career_success
+
+-- Explore highest/lowest age
+SELECT Age FROM dbo.career_success
+SELECT DISTINCT Age FROM dbo.career_success
+
+-- Explore projects completed
+SELECT Projects_Completed FROM dbo.career_success
+SELECT DISTINCT Projects_Completed FROM dbo.career_success
+
+-- Explore certifications
+SELECT Certifications FROM dbo.career_success
+SELECT DISTINCT Certifications FROM dbo.career_success
+
+-- Explore job offers
+SELECT Job_Offers FROM dbo.career_success
+SELECT DISTINCT Job_Offers FROM dbo.career_success
+
+-- Explore starting salary
+SELECT Starting_Salary FROM dbo.career_success
+SELECT AVG(Starting_Salary) AS Average_Salary, MIN(Starting_Salary) AS Min_Salary, MAX(Starting_Salary) AS Max_Salary  FROM dbo.career_success
+
+-- Explore years to promotion
+SELECT Years_To_Promotion FROM dbo.career_success
+SELECT AVG(Years_To_Promotion) AS Average_Years, MIN(Years_To_Promotion) AS Mix_Years, MAX(Years_To_Promotion) AS Max_Years FROM dbo.career_success
+SELECT Years_To_Promotion FROM dbo.career_success WHERE Years_To_Promotion < 1
+
+--Exploration of Student Metrics Dataset:
