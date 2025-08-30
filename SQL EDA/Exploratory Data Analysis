@@ -1,4 +1,7 @@
---Exploration of Career Success Dataset:
+====================================================================================
+Exploration of Career Success Dataset:
+====================================================================================
+
 -- Explore all fields of study
 SELECT Field_of_Study FROM dbo.career_success
 SELECT DISTINCT Field_of_Study FROM dbo.career_success
@@ -33,7 +36,41 @@ SELECT AVG(Starting_Salary) AS Average_Salary, MIN(Starting_Salary) AS Min_Salar
 
 -- Explore years to promotion
 SELECT Years_To_Promotion FROM dbo.career_success
-SELECT AVG(Years_To_Promotion) AS Average_Years, MIN(Years_To_Promotion) AS Mix_Years, MAX(Years_To_Promotion) AS Max_Years FROM dbo.career_success
+SELECT AVG(Years_To_Promotion) AS Average_Years, MIN(Years_To_Promotion) AS Min_Years, MAX(Years_To_Promotion) AS Max_Years FROM dbo.career_success
 SELECT Years_To_Promotion FROM dbo.career_success WHERE Years_To_Promotion < 1
 
---Exploration of Student Metrics Dataset:
+====================================================================================
+Exploration of Student Metrics Dataset:
+====================================================================================
+
+--Explore enrollment date duration
+SELECT MIN(Enrollment_Date) AS Min_Enrollment, 
+	   MAX(Enrollment_Date) AS Max_Enrollment,
+	   DATEDIFF(YEAR, MIN(Enrollment_Date), MAX(Enrollment_Date)) AS Enrollment_Duration
+FROM dbo.student_metrics
+
+--Explore graduation date duration
+SELECT MIN(Graduation_Date) AS Min_Graduation, 
+	   MAX(Graduation_Date) AS Max_Graduation,
+	   DATEDIFF(YEAR, MIN(Graduation_Date), MAX(Graduation_Date)) AS Graduation_Duration
+FROM dbo.student_metrics
+
+--Explore employment date 
+SELECT MIN(Employment_Date) AS Min_Employment, 
+	   MAX(Employment_Date) AS Max_Employment,
+	   DATEDIFF(YEAR, MIN(Employment_Date), MAX(Employment_Date)) AS Employment_Date
+FROM dbo.student_metrics
+
+--Explore course completion rate 
+SELECT ROUND(Course_Completion_Rate, 2) AS Course_Completion FROM dbo.student_metrics
+SELECT ROUND(MIN(Course_Completion_Rate), 2) AS Min_Course_Completion, MAX(Course_Completion_Rate) AS Max_Course_Completion FROM dbo.student_metrics
+
+--Explore time to employment in days 
+SELECT MIN(Time_to_Employment_Days) AS Min_Time_to_Employment, 
+	   MAX(Time_to_Employment_Days) AS Max_Time_to_Employment
+FROM dbo.student_metrics
+
+--Explore student NPS
+SELECT MIN(Student_NPS) AS Min_Student_NPS, 
+	   MAX(Student_NPS) AS Max_Student_NPS
+FROM dbo.student_metrics
