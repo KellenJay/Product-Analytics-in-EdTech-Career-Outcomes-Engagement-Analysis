@@ -104,7 +104,7 @@ edtech-career-analytics/
 
 ## Highlights
 
-- ✅ Combines public and synthetic data for realism  
-- ✅ Demonstrates causal inference without A/B tests  
-- ✅ Focused on product-centric EdTech metrics  
-- ✅ Developed with modular, business-first analytics flow  
+- Combines public and synthetic data for realism  
+- Demonstrates causal inference without A/B tests  
+- Focused on product-centric EdTech metrics  
+- Developed with modular, business-first analytics flow  
