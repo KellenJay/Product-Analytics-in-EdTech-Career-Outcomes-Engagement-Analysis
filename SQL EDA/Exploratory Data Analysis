@@ -74,3 +74,29 @@ FROM dbo.student_metrics
 SELECT MIN(Student_NPS) AS Min_Student_NPS, 
 	   MAX(Student_NPS) AS Max_Student_NPS
 FROM dbo.student_metrics
+
+--Explore DAU_MAU_Ratio
+SELECT ROUND(MIN(DAU_MAU_Ratio), 2) AS Min_DAU_MAU_Ratio, 
+	   ROUND(MAX(DAU_MAU_Ratio), 2) AS Max_DAU_MAU_Ratio
+FROM dbo.student_metrics
+
+--Explore onboarding days to value
+SELECT MIN(Onboarding_TTV_Days) AS Min_Onboarding_TTV,
+	   MAX(Onboarding_TTV_Days) AS Max_Onboarding_TTV
+FROM dbo.student_metrics
+
+--Explore churn flag
+SELECT Churn_Flag FROM dbo.student_metrics
+
+--Explore free trail conversion
+SELECT Free_Trial_Conversion FROM dbo.student_metrics
+
+--Explore monthly recurring revenue
+SELECT MIN(MRR_USD) AS Min_MRR_USD,
+	   MAX(MRR_USD) AS Max_MRR_USD
+FROM dbo.student_metrics
+
+--Explore average session duration per minute
+SELECT MIN(Avg_Session_Duration_Min) AS Min_Session_Duration,
+	   MAX(Avg_Session_Duration_Min) AS Max_Session_Duration
+FROM dbo.student_metrics
