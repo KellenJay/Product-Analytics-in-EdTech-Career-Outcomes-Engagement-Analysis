@@ -52,6 +52,8 @@ We constructed a Directed Acyclic Graph (DAG) to define our causal assumptions:
 
 This structure was formalized using `DoWhy`'s `CausalModel` class and validated for identifiability.
 
+<img width="1042" height="753" alt="image" src="https://github.com/user-attachments/assets/c8c672c6-b9d5-4c80-ac7e-69159d70e47b" />
+
 ### 2. **Backdoor Criterion & Identified Estimand**
 We applied the backdoor criterion to adjust for confounders and identify the average treatment effect (ATE) of `Projects_Completed` on `Job_Offers`.
 
@@ -73,13 +75,13 @@ Graph vs Data tests using partial correlation confirmed that our DAG was statist
 
 ## Datasets
 
-### `career_success.csv` (Kaggle Dataset)
+### `career_success.csv` 
 - **Demographics**: Age, Gender  
 - **Academic Performance**: High School GPA, SAT Scores, University GPA, Field of Study  
 - **Skills & Activities**: Internships, Projects, Certifications, Soft Skills, Networking  
 - **Career Outcomes**: Job Offers, Starting Salary, Career Satisfaction, Promotion Timeline, Job Level, Work-Life Balance, Entrepreneurship
 
-### `student_metrics.csv` (Synthetic Dataset)
+### `student_metrics.csv` 
 - Sprint Completions  
 - Coaching Sessions  
 - Workshop Attendance  
@@ -131,8 +133,10 @@ edtech-career-analytics/
 │
 ├── README.md
 ```
-<img width="1042" height="753" alt="image" src="https://github.com/user-attachments/assets/ec7e2956-44ba-402c-abcb-0503e82af03e" />
+<img width="628" height="259" alt="image" src="https://github.com/user-attachments/assets/5080eb47-ebbc-4035-a639-e17204212810" />
 ---
+
+Controlling for internships, networking score, and soft skills score, we estimate that completing one additional project **increases the expected number of job offers by approximately 23%,** with high statistical significance and a 95% confidence interval between 17%-28%.
 
 ## Final Takeaways
 
