@@ -131,7 +131,7 @@ edtech-career-analytics/
 │
 ├── README.md
 ```
-
+<img width="1042" height="753" alt="image" src="https://github.com/user-attachments/assets/ec7e2956-44ba-402c-abcb-0503e82af03e" />
 ---
 
 ## Final Takeaways
