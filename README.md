@@ -153,6 +153,7 @@ This project demonstrates how causal inference techniques—particularly DAG-bas
 **Recommendations**
 
 **1. Invest in Project-Based Learning Infrastructure:** Given the strong causal link between project completion and job offers, the platform should prioritize features that encourage students to complete more real-world projects during their learning journey.
+
 **2. Enable Portfolio-Focused Support Tools:** Introduce tools like automated project feedback, peer showcases, and project-to-career alignment to help students better demonstrate their skills to potential employers.
 
 This insight has strong implications for **EdTech product design**, **curriculum development**, and **student guidance systems**. It emphasizes the importance of **hands-on project work** not just as a learning tool, but as a **tangible career accelerator**. This is a strong example of how product analysts can move beyond correlation and begin shaping strategy through rigorous causal frameworks.
