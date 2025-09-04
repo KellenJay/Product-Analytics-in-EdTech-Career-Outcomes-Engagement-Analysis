@@ -148,7 +148,7 @@ While our causal model passed key robustness checks; including placebo and rando
 
 ## Final Takeaways
 
-This project demonstrates how causal inference techniques—particularly DAG-based reasoning and statistical refutation—can be applied in product analytics to simulate experimental thinking. By focusing on the effect of project completions on job outcomes, we provide evidence-backed insight into how learning interventions may influence employability. It provides a solid foundation for future extensions, including Bayesian inference, uplift modeling, and quasi-experimental designs like DiD or synthetic control.
+This project demonstrates how causal inference techniques can be applied in product analytics to simulate experimental thinking. The study set out to answer a central question in education-to-employment analytics: **"Do projects completed during education causally influence the number of job offers students receive?"** Using a causal inference and robust validation techniques, the analysis reveals that: **There is a positive causal effect of project completion on job offers.** Students who complete more projects are significantly more likely to receive additional job offers, even after accounting for potential confounders.
 
 **Recommendations**
 
