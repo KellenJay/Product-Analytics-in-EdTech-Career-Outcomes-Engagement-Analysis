@@ -2,7 +2,7 @@
 
 This repository presents a comprehensive product analytics case study designed to explore the causal impact of student engagement—particularly project-based learning—on early career outcomes in the EdTech landscape.
 
-It integrates a real-world inspired dataset (from Kaggle) with a synthetic learner engagement dataset to simulate challenges often tackled by data and product analysts working in education-focused organizations. The analysis is grounded in a rigorous causal inference framework using DoWhy and DAG modeling to identify and validate key hypotheses.
+It integrates a real-world inspired dataset with a synthetic learner engagement dataset to simulate challenges often tackled by data and product analysts working in education-focused organizations. The analysis is grounded in a rigorous causal inference framework using DoWhy and DAG modeling to identify and validate key hypotheses.
 
 ---
 
