@@ -1,7 +1,22 @@
 # Product-Analytics-in-EdTech-Career-Outcomes-Engagement-Analysis
-This repository presents a comprehensive product analytics case study designed to explore the relationships between student engagement, educational experiences, and early-career outcomes in the EdTech landscape.
 
-It integrates a real-world inspired dataset (from Kaggle) with a synthetic learner engagement dataset to simulate challenges often tackled by data and product analysts working in education-focused organizations.
+This repository presents a comprehensive product analytics case study designed to explore the causal impact of student engagement—particularly project-based learning—on early career outcomes in the EdTech landscape.
+
+It integrates a real-world inspired dataset (from Kaggle) with a synthetic learner engagement dataset to simulate challenges often tackled by data and product analysts working in education-focused organizations. The analysis is grounded in a rigorous causal inference framework using DoWhy and DAG modeling to identify and validate key hypotheses.
+
+---
+
+## Problem Statement
+
+We're investigating whether the number of projects a student completes during their education has a causal effect on the number of job offers they receive post-graduation. This question explores whether project-based learning (a key pedagogical strategy in EdTech) translates into better career opportunities.
+
+Our goal is to understand whether there is a causal relationship (not just correlation) between `Projects_Completed` and `Job_Offers`, using causal inference methods to simulate intervention-like reasoning without A/B testing.
+
+### Why This Matters
+- **For students**: Understand the value of project work in boosting employability.
+- **For product teams**: Prioritize features that promote deeper engagement with practical projects.
+- **For career services teams**: Advocate for more robust project mentorship or showcase tools.
+- **For EdTech platforms**: Justify product strategy focused on portfolio development.
 
 ---
 
@@ -11,9 +26,9 @@ In education technology, understanding which factors contribute to learner succe
 
 This project simulates the kinds of analysis used to evaluate:
 
-- The impact of learner engagement on job outcomes
-- The causal effect of interventions like coaching or sprint completions
-- How behavioral metrics can predict career success
+- The causal impact of learner activity on job outcomes
+- Whether projects completed by students serve as a valid intervention variable
+- How behavioral metrics mediate or confound career success
 
 It brings together foundational product analytics, causal inference, and statistical modeling into one pipeline.
 
@@ -21,29 +36,50 @@ It brings together foundational product analytics, causal inference, and statist
 
 ## Core Questions
 
-This project attempts to answer three central product analytics questions:
+1. **Does completing more projects during an EdTech program causally influence the number of job offers a student receives?**
+2. **Which factors confound or mediate this relationship—e.g., networking, internships, soft skills?**
+3. **Can we validate this using DAGs and statistical refuters without needing randomized experiments?**
 
-1. **How does early student engagement (e.g., coaching sessions, sprint completions, learning time) influence job offer outcomes or starting salary?**
-2. **What is the estimated causal effect of coaching or support features on employment and promotion timelines, using observational data?**
-3. **Can Bayesian models surface meaningful uplift or risk signals in learner segments for targeted intervention strategies?**
+---
 
-These questions will guide data exploration, feature engineering, and experiment simulation.
+## Methodology
+
+### 1. **Causal Graph Design (DAG Modeling)**
+We constructed a Directed Acyclic Graph (DAG) to define our causal assumptions:
+- Treatment: `Projects_Completed`
+- Outcome: `Job_Offers`
+- Confounders: `Networking_Score`, `Internships_Completed`, `Soft_Skills_Score`
+
+This structure was formalized using `DoWhy`'s `CausalModel` class and validated for identifiability.
+
+### 2. **Backdoor Criterion & Identified Estimand**
+We applied the backdoor criterion to adjust for confounders and identify the average treatment effect (ATE) of `Projects_Completed` on `Job_Offers`.
+
+### 3. **Regression Estimation**
+We estimated the causal effect using linear regression, controlling for all identified confounders. The estimated effect was:
+- **0.2257** (p < 0.001), indicating a significant positive causal impact.
+
+### 4. **Robustness Checks (Refuters)**
+To validate the strength of our causal estimate, we applied multiple refuters:
+- Placebo Test: No effect found using fake treatment
+- Subset Validation: Estimate remained stable across samples
+- Random Common Cause: Estimate unchanged with noise
+- Unobserved Confounder Simulation: Estimate varied within expected bounds
+
+### 5. **Model Validation with Conditional Independence Tests**
+Graph vs Data tests using partial correlation confirmed that our DAG was statistically plausible under different levels of conditioning (k = 0 to 4).
 
 ---
 
 ## Datasets
 
 ### `career_success.csv` (Kaggle Dataset)
-This dataset contains 400 anonymized student records covering:
-
 - **Demographics**: Age, Gender  
 - **Academic Performance**: High School GPA, SAT Scores, University GPA, Field of Study  
 - **Skills & Activities**: Internships, Projects, Certifications, Soft Skills, Networking  
 - **Career Outcomes**: Job Offers, Starting Salary, Career Satisfaction, Promotion Timeline, Job Level, Work-Life Balance, Entrepreneurship
 
 ### `student_metrics.csv` (Synthetic Dataset)
-This custom dataset simulates learning engagement metrics common in EdTech platforms:
-
 - Sprint Completions  
 - Coaching Sessions  
 - Workshop Attendance  
@@ -52,28 +88,24 @@ This custom dataset simulates learning engagement metrics common in EdTech platf
 - Time to Graduation  
 - Student NPS  
 - Free → Paid Conversion  
-- Program Type  
-
-The two datasets will be merged to conduct multi-faceted analysis from both an education and product engagement lens.
+- Program Type
 
 ---
 
 ## Goals
-
-- Identify engagement patterns that correlate with job success  
-- Use causal inference to estimate non-random effects of support interventions  
-- Apply Bayesian approaches for uplift modeling across learner cohorts  
-- Prototype business-facing dashboards to surface actionable insights
+- Use DAGs to formally map causal assumptions
+- Estimate ATE using backdoor-adjusted regression
+- Validate model robustness using multiple refutation strategies
+- Lay the groundwork for future experimentation using Bayesian or DiD frameworks
 
 ---
 
 ## Tools & Tech
 
-- **Python**: Pandas, NumPy, Seaborn, Scikit-learn, PyMC  
+- **Python**: Pandas, NumPy, Seaborn, Scikit-learn, DoWhy, NetworkX  
 - **SQL**: Microsoft SQL Server  
 - **Jupyter Notebooks**  
-- **Visualization**: Plotly, Matplotlib, Streamlit (for optional dashboard UI)  
-- **EDA + Experiment Planning**  
+- **Visualization**: Matplotlib, Plotly, Graphviz
 
 ---
 
@@ -90,21 +122,20 @@ edtech-career-analytics/
 ├── notebooks/
 │   ├── 01_eda_career_success.ipynb
 │   ├── 02_sql_exploration_edtech.ipynb
-│   ├── 03_causal_inference_simulation.ipynb
-│   ├── 04_bayesian_modeling_uplift.ipynb
+│   ├── 03_causal_dag_modeling.ipynb
+│   ├── 04_estimation_and_refutation.ipynb
 │
 ├── visuals/
-│   ├── charts/
-│   ├── dashboard_mockups/
+│   ├── causal_dags/
+│   ├── plots/
 │
 ├── README.md
 ```
 
 ---
 
-## Highlights
+## Final Takeaways
 
-- Combines public and synthetic data for realism  
-- Demonstrates causal inference without A/B tests  
-- Focused on product-centric EdTech metrics  
-- Developed with modular, business-first analytics flow  
+This project demonstrates how causal inference techniques—particularly DAG-based reasoning and statistical refutation—can be applied in product analytics to simulate experimental thinking. By focusing on the effect of project completions on job outcomes, we provide evidence-backed insight into how learning interventions may influence employability. It provides a solid foundation for future extensions, including Bayesian inference, uplift modeling, and quasi-experimental designs like DiD or synthetic control.
+
+This insight has strong implications for **EdTech product design**, **curriculum development**, and **student guidance systems**. It emphasizes the importance of **hands-on project work** not just as a learning tool, but as a **tangible career accelerator**. This is a strong example of how product analysts can move beyond correlation and begin shaping strategy through rigorous causal frameworks.
