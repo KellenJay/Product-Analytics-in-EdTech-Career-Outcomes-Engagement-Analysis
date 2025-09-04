@@ -8,9 +8,9 @@ It integrates a real-world inspired dataset with a synthetic learner engagement 
 
 ## Problem Statement
 
-We're investigating whether the number of projects a student completes during their education has a causal effect on the number of job offers they receive post-graduation. This question explores whether project-based learning (a key pedagogical strategy in EdTech) translates into better career opportunities.
+We're investigating whether **the number of projects a student completes during their education has a causal effect on the number of job offers** they receive post-graduation. This question explores whether project-based learning (a key pedagogical strategy in EdTech) translates into better career opportunities.
 
-Our goal is to understand whether there is a causal relationship (not just correlation) between `Projects_Completed` and `Job_Offers`, using causal inference methods to simulate intervention-like reasoning without A/B testing.
+Our goal is to understand whether there is a **causal relationship (not just correlation)** between `Projects_Completed` and `Job_Offers`, using causal inference methods to simulate intervention-like reasoning without A/B testing.
 
 ### Why This Matters
 - **For students**: Understand the value of project work in boosting employability.
@@ -26,9 +26,9 @@ In education technology, understanding which factors contribute to learner succe
 
 This project simulates the kinds of analysis used to evaluate:
 
-- The causal impact of learner activity on job outcomes
+- The **causal impact of learner activity on job outcomes**
 - Whether projects completed by students serve as a valid intervention variable
-- How behavioral metrics mediate or confound career success
+- How **behavioral metrics** mediate or confound **career success**
 
 It brings together foundational product analytics, causal inference, and statistical modeling into one pipeline.
 
