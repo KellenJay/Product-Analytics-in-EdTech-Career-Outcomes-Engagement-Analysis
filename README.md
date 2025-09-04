@@ -1,4 +1,4 @@
-# Product-Analytics-in-EdTech-Career-Outcomes-Engagement-Analysis
+# Career Outcomes Engagement Analysis
 
 This repository presents a comprehensive product analytics case study designed to explore the causal impact of student engagement—particularly project-based learning—on early career outcomes in the EdTech landscape.
 
