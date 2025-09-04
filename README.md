@@ -138,8 +138,21 @@ edtech-career-analytics/
 
 Controlling for internships, networking score, and soft skills score, we estimate that completing one additional project **increases the expected number of job offers by approximately 23%,** with high statistical significance and a 95% confidence interval between 17%-28%.
 
+--- 
+
+## Model Limitations and Causal Trade-offs
+
+While our causal model passed key robustness checks; including placebo and random confounder tests, it **may still be sensitive to unmeasured confounding variables.** This means that the estimated effect, though promising, **should not be treated as definitive.** Instead, it **should inform broader strategy decisions,** ideally alongside further validation methods like randomized trials or instrumental variable approaches.
+
+--- 
+
 ## Final Takeaways
 
 This project demonstrates how causal inference techniques—particularly DAG-based reasoning and statistical refutation—can be applied in product analytics to simulate experimental thinking. By focusing on the effect of project completions on job outcomes, we provide evidence-backed insight into how learning interventions may influence employability. It provides a solid foundation for future extensions, including Bayesian inference, uplift modeling, and quasi-experimental designs like DiD or synthetic control.
+
+**Recommendations**
+
+**1. Invest in Project-Based Learning Infrastructure:** Given the strong causal link between project completion and job offers, the platform should prioritize features that encourage students to complete more real-world projects during their learning journey.
+**2. Enable Portfolio-Focused Support Tools:** Introduce tools like automated project feedback, peer showcases, and project-to-career alignment to help students better demonstrate their skills to potential employers.
 
 This insight has strong implications for **EdTech product design**, **curriculum development**, and **student guidance systems**. It emphasizes the importance of **hands-on project work** not just as a learning tool, but as a **tangible career accelerator**. This is a strong example of how product analysts can move beyond correlation and begin shaping strategy through rigorous causal frameworks.
