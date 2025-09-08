@@ -53,6 +53,7 @@ We compared three propensity models:
 - With flexible propensity models, balance was achieved and the effect shrank to near zero.
 - IPTW reduced imbalance slightly but remained above the |SMD| < 0.10 threshold across covariates.
 - Overlap weights achieved near-zero SMDs (especially with flexible PS), indicating excellent balance and a more credible estimate.
+  
 - **Conclusion:** Once confounding is properly addressed, there is **no statistically significant causal effect** of project completion on job offers in the overlap population.  
 
 <img width="1572" height="688" alt="image" src="https://github.com/user-attachments/assets/8b248cea-a635-4397-8823-6e738d5ecad7" />
