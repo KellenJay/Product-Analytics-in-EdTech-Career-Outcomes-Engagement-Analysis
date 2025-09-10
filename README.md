@@ -3,7 +3,6 @@
 This repository explores whether completing more projects causally increases students’ job offers.  
 We apply multiple causal inference frameworks, diagnosing assumptions at each step, and finish with business-ready insights.
 
----
 
 ## Step 1: DAG Modeling
 
@@ -21,7 +20,6 @@ Initial regression suggested a positive effect — but regression alone cannot e
 <img width="1042" height="753" alt="DAG" src="https://github.com/user-attachments/assets/45e2eed0-5fb9-46ab-bd38-864f358b80e8" />
 
 
----
 
 ## Step 2: Propensity Score Matching (Quartile Split) → Failed
 
@@ -33,7 +31,7 @@ Initial regression suggested a positive effect — but regression alone cannot e
 
 📌 *[Insert PS histogram here]*
 
----
+
 
 ## Step 3: Inverse Probability of Treatment Weighting (Median Split) → Partial Success
 
@@ -46,7 +44,7 @@ Initial regression suggested a positive effect — but regression alone cannot e
 
 📌 *[Insert weighted covariate balance plot here]*
 
----
+
 
 ## Step 4: Overlap Weights (ATO) → Robust & Credible
 
@@ -61,7 +59,7 @@ Compared three propensity models:
 
 📌 *[Insert overlap weighting plot(s) here]*
 
----
+
 
 ## Step 5: Bayesian Inference → Stability & Trade-offs
 
@@ -76,7 +74,6 @@ Reported **posterior rate ratios** instead of point estimates.
 <img width="1607" height="636" alt="Screenshot 2025-09-10 0051592" src="https://github.com/user-attachments/assets/ea1fa1db-e602-4971-9b8b-a960f92d168b" />
 
 
----
 
 ## Trade-offs and Lessons
 
@@ -85,7 +82,7 @@ Reported **posterior rate ratios** instead of point estimates.
 - **Overlap Weights:** Robust to limited overlap; revealed null effect but applies only to overlap population.  
 - **Bayesian GLM:** Provided richer uncertainty quantification and showed robustness to prior choice.  
 
----
+
 
 ## Final Conclusion
 
@@ -95,7 +92,7 @@ But once confounders (internships, networking, soft skills) were properly addres
 - **Overlap weights** and **Bayesian inference** converged on a **null effect** (RR ≈ 1.0, credible intervals crossing 1.0).  
 - **Interpretation:** Project completion alone does **not** drive job offers; its apparent effect is confounded by internships and networking.  
 
----
+
 
 ## Recommendations for the Business
 
