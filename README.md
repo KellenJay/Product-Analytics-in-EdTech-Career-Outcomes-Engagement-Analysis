@@ -29,7 +29,7 @@ Initial regression suggested a positive effect — but regression alone cannot e
 
 **Takeaway:** Matching not defensible; highlights why overlap checks are essential.  
 
-📌 *[Insert PS histogram here]*
+<img width="897" height="705" alt="PSM histogram" src="https://github.com/user-attachments/assets/9de26c63-8700-4a26-9ae1-5c59e02863aa" />
 
 
 
@@ -42,7 +42,7 @@ Initial regression suggested a positive effect — but regression alone cannot e
 
 **Caution:** Large effect likely inflated due to residual imbalance.  
 
-📌 *[Insert weighted covariate balance plot here]*
+<img width="907" height="712" alt="image" src="https://github.com/user-attachments/assets/f4e96289-f96e-4376-aef1-3eae882b7002" />
 
 
 
@@ -57,7 +57,7 @@ Compared three propensity models:
 
 **Result:** Effect shrank to near zero once balance was achieved.  
 
-📌 *[Insert overlap weighting plot(s) here]*
+<img width="898" height="696" alt="image" src="https://github.com/user-attachments/assets/ad1627f5-4ce3-4bcb-a145-864d32753a55" />
 
 
 
